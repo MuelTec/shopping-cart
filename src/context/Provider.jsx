@@ -5,6 +5,7 @@ import AppContext from './AppContext';
 const Provider = ({ children }) => {
   
   const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const value = {
@@ -12,6 +13,8 @@ const Provider = ({ children }) => {
     setProducts,
     loading,
     setLoading,
+    cartItems,
+    setCartItems,
   };
 
   return (
