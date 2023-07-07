@@ -6,12 +6,12 @@ import AppContext from '../../context/AppContext';
 import fomartCurrency from '../../utils/formatCurrency';
 
 const Carrinho = () => {
-  const { cartItems } = useContext(AppContext);
+  const { cartItems, isCartVisible } = useContext(AppContext);
 
   const totalPrice = cartItems.reduce((acc, item) => item.price + acc, 0);
 
   return (
-    <section className="carrinho ">
+    <section className={`cart ${isCartVisible ? 'cart--active': ''}`}>
       <div className="carrinhos-items">
         {cartItems.map((cartItem) => <CartItem key={cartItem.id} data={cartItem} />)}
       </div>

@@ -30,6 +30,6 @@
   border-bottom: none;
 }
 
-.cart-active {
+.cart--active {
   transform: translate(0, 0);
 }

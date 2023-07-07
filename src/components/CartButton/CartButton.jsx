@@ -5,12 +5,13 @@ import AppContext from '../../context/AppContext';
 
 const CartButton = () => {
 
-  const { cartItems } = useContext(AppContext);
+  const { cartItems, isCartVisible, setIsCartVisible} = useContext(AppContext);
 
   return (
-    <button type="button" className="cart-button">
+    <button type="button" className="cart-button" onClick={()=> setIsCartVisible(isCartVisible)}>
       <AiOutlineShoppingCart />
-      <span className="cart-status">{cartItems.length}</span>
+
+      { cartItems.length > 0 && <span className="cart-status">{cartItems.length}</span>}
     </button>
   );
 };
